@@ -1,14 +1,17 @@
-<input #box (keyup)="onKey(box.value)">
-<button class="card card-small" (click)="t()" tabindex="0">Recognize</button>
+<div class="container">
+    <div class="row">
+        <input #box (keyup)="onKey(box.value)">
+        <button class="btn button-primary" (click)="t()" tabindex="0">Recognize</button>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="{{url}}" style="width: 100%">
+        </div>
+        <br>
 
-<br>
-
-<div class="col-sm-6">
-    <img src="{{url}}" alt="Girl in a jacket">
-</div>
-<br>
-
-<div class="col-sm-6">
-    <h3>Output</h3>
-    <p class="output">{{output}}</p>
+        <div class="col-sm-6">
+            <h3>Output</h3>
+            <p class="output">{{output}}</p>
+        </div>
+    </div>
 </div>
