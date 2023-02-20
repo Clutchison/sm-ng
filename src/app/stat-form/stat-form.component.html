@@ -1,0 +1,114 @@
+<form>
+  <mat-card class="monster-card">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-sm-6 text-center">
+          <h3>Create New Monster</h3>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <mat-form-field class="col-sm-3">
+          <mat-label>Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field class="col-sm-3">
+          <mat-label>Challenge Rating</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="row justify-content-center">
+        <mat-form-field class="col-sm-3">
+          <mat-label>Size</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field class="col-sm-3">
+          <mat-label>Type</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field class="col-sm-3">
+          <mat-label>Alignment</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="row justify-content-center">
+        <mat-form-field class="col-sm-3">
+          <mat-label>Armor Class</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field class="col-sm-3">
+          <mat-label>Hit Points</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field class="col-sm-3">
+          <mat-label>Speed</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <mat-card class="card">
+        <h4 style="text-align: center">Stats</h4>
+        <mat-grid-list [cols]="6" rowHeight="6:1">
+          <mat-grid-tile>
+            <mat-form-field class="col-sm-10 stat">
+              <mat-label>STR</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="col-sm-10 stat">
+              <mat-label>DEX</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="col-sm-10 stat">
+              <mat-label>CON</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="col-sm-10 stat">
+              <mat-label>INT</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="col-sm-10 stat">
+              <mat-label>WIS</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <mat-form-field class="col-sm-10 stat">
+              <mat-label>CHA</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </mat-card>
+    </div>
+    <div class="row justify-content-center">
+      <mat-form-field class="col-sm-3">
+        <mat-label>Skills</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="col-sm-3">
+        <mat-label>Senses</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="col-sm-3">
+        <mat-label>Languages</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+    <div class="row justify-content-center">
+      <mat-form-field class="col-sm-3">
+        <mat-label>Abilities</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field class="col-sm-3">
+        <mat-label>Actions</mat-label>
+        <input matInput>
+      </mat-form-field>
+    </div>
+  </mat-card>
+</form>

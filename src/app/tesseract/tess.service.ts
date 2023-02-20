@@ -14,10 +14,10 @@ export const test = async (url: string): Promise<string> => {
   // console.log('Initializing language...')
   await worker.initialize('eng');
   // console.log('Done!')
-  await worker.setParameters({
-    tessedit_pageseg_mode: Tesseract.PSM.SPARSE_TEXT,
+  // await worker.setParameters({
+  //   tessedit_pageseg_mode: Tesseract.PSM.SPARSE_TEXT,
 
-  })
+  // })
   // console.log('Recognizing text...');
   const { data: { text } } = await worker.recognize(url);
   // console.log('Done!')

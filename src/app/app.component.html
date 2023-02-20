@@ -1,7 +1,8 @@
-<div class="container">
+<mat-card class="container">
     <div class="row">
         <input #box (keyup)="onKey(box.value)">
-        <button class="btn button-primary" (click)="t()" tabindex="0">Recognize</button>
+        <button mat-raised-button color="primary" (click)="t()">Recognize</button>
+
     </div>
     <div class="row">
         <div class="col-sm-6">
@@ -14,4 +15,7 @@
             <p class="output">{{output}}</p>
         </div>
     </div>
-</div>
+    <div class="row">
+        <sm-stat-form></sm-stat-form>
+    </div>
+</mat-card>
