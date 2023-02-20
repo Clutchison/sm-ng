@@ -1,0 +1,19 @@
+<mat-card class="container">
+    <div class="row">
+        <input #box (keyup)="onKey(box.value)">
+        <button mat-raised-button color="primary" (click)="t()">Recognize</button>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="{{url}}" style="width: 100%">
+        </div>
+        <br>
+
+        <div class="col-sm-6">
+            <h3>Output</h3>
+            <p class="output">{{output}}</p>
+        </div>
+    </div>
+    <sm-stat-form></sm-stat-form>
+</mat-card>
