@@ -13,13 +13,21 @@
         </mat-form-field>
         <mat-form-field class="col-sm-3">
           <mat-label>Challenge Rating</mat-label>
-          <input matInput>
+          <mat-select>
+            <mat-option *ngFor="let cr of crs" value="cr">
+              {{cr}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="row justify-content-center">
         <mat-form-field class="col-sm-3">
           <mat-label>Size</mat-label>
-          <input matInput>
+          <mat-select>
+            <mat-option *ngFor="let size of sizes" value="size">
+              {{size | titlecase}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field class="col-sm-3">
           <mat-label>Type</mat-label>
@@ -27,7 +35,11 @@
         </mat-form-field>
         <mat-form-field class="col-sm-3">
           <mat-label>Alignment</mat-label>
-          <input matInput>
+          <mat-select>
+            <mat-option *ngFor="let al of alignments" value="al">
+              {{al | titlecase}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="row justify-content-center">
@@ -36,6 +48,9 @@
           <input matInput>
         </mat-form-field>
         <mat-form-field class="col-sm-3">
+          <mat-slide-toggle [(ngModel)]="hpUsesDice" labelPosition="before" name="hpUsesDice" style="position: absolute; right: 0px;">
+            {{hpUsesDice ? 'Dice' : 'Raw HP'}}
+          </mat-slide-toggle>
           <mat-label>Hit Points</mat-label>
           <input matInput>
         </mat-form-field>

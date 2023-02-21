@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateMonsterComponent } from './features/create-monster/create-monster.component';
 
 const routes: Routes = [
-  { path: 'create-monster', component: CreateMonsterComponent }
+  { path: 'create-monster', component: CreateMonsterComponent },
 ];
 
 @NgModule({
