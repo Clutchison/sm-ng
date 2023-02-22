@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { CreateMonsterModule } from './features/create-monster/create-monster.module';
 import { AppComponent } from './app.component';
+import { CreateMonsterComponent } from './features/create-monster/create-monster.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
-    CreateMonsterModule,
+    CreateMonsterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

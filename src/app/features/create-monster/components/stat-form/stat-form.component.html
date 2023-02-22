@@ -48,16 +48,16 @@
           <input matInput>
         </mat-form-field>
         <mat-form-field class="col-sm-3">
-          <mat-slide-toggle [(ngModel)]="hpUsesDice" labelPosition="before" name="hpUsesDice" style="position: absolute; right: 0px;">
+          <mat-slide-toggle [(ngModel)]="hpUsesDice" labelPosition="before" name="hpUsesDice"
+            style="position: absolute; right: 0px;">
             {{hpUsesDice ? 'Dice' : 'Raw HP'}}
           </mat-slide-toggle>
           <mat-label>Hit Points</mat-label>
           <input matInput>
         </mat-form-field>
-        <mat-form-field class="col-sm-3">
-          <mat-label>Speed</mat-label>
-          <input matInput>
-        </mat-form-field>
+        <div class="col-sm-3">
+        <sm-speed-input></sm-speed-input>
+</div>
       </div>
       <mat-card class="card">
         <h4 style="text-align: center">Stats</h4>

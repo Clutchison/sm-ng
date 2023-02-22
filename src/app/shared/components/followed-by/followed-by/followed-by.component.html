@@ -1,0 +1,6 @@
+<mat-form-field style="position: relative">
+  <mat-label>{{label}}</mat-label>
+  <input #inp matInput (keyup)="textWidth(inp.value)"/>
+  <input matInput value="{{followedBy}}" style="position: absolute; left: 0px; pointer-events: none;"/>
+  <span hidden #calcSpan></span>
+</mat-form-field>

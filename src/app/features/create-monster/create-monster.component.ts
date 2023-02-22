@@ -1,13 +1,25 @@
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { test } from './services/tess.service';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatInputModule,
+} from '@angular/material';
+import { StatFormComponent } from './components/stat-form/stat-form.component';
 
 @Component({
   selector: 'sm-create-monster',
   templateUrl: './create-monster.component.html',
-  styleUrls: ['./create-monster.component.css']
+  styleUrls: ['./create-monster.component.css'],
+  standalone: true,
+  imports: [
+    MatCardModule,
+    StatFormComponent,
+    MatButtonModule,
+    MatInputModule,
+  ]
 })
 export class CreateMonsterComponent implements AfterViewInit {
-  title = 'sm-ng';
   url = 'https://i.imgur.com/VaiOZ7G.png';
   output = '';
 
