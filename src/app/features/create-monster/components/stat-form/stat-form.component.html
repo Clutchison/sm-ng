@@ -47,14 +47,7 @@
           <mat-label>Armor Class</mat-label>
           <input matInput>
         </mat-form-field>
-        <mat-form-field class="col-sm-3">
-          <mat-slide-toggle [(ngModel)]="hpUsesDice" labelPosition="before" name="hpUsesDice"
-            style="position: absolute; right: 0px;">
-            {{hpUsesDice ? 'Dice' : 'Raw HP'}}
-          </mat-slide-toggle>
-          <mat-label>Hit Points</mat-label>
-          <input matInput>
-        </mat-form-field>
+        <sm-hp-input [sizes]="sizes" class="col-sm-3"></sm-hp-input>
         <div class="col-sm-3">
         <sm-speed-input></sm-speed-input>
 </div>

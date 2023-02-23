@@ -2,11 +2,18 @@
   [ngStyle]="{'text-align': centerText ? 'center' : 'left'}"
   style="position: relative">
   <mat-label>{{label}}</mat-label>
-  <input #inp matInput smSpecialChar [whitelist]="'numeric'" />
+  <input #inp 
+    matInput 
+    smSpecialChar 
+    [whitelist]="'numeric'"
+    style="position: relative"
+    [ngStyle]="{'right': prefixOffset(inp.value) + 'px' }"
+  />
   <input #suffix 
-  matInput 
-  value="{{ inp.value ? calcFollowedBy() : ''}}" 
-  class="suffix" 
-  [ngStyle]="{'left': suffixOffset(inp.value) + 'px'}" 
+    matInput 
+    value="{{ inp.value ? calcFollowedBy() : ''}}" 
+    class="suffix" 
+    [disabled]="true"
+    [ngStyle]="{'left': suffixOffset(inp.value) + 'px'}" 
   />
 </mat-form-field>

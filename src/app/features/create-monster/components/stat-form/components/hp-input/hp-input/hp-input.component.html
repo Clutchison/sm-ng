@@ -1,0 +1,24 @@
+<div *ngIf="!hpUsesDice">
+  <mat-form-field style="width: 100%">
+    <mat-slide-toggle [(ngModel)]="hpUsesDice" labelPosition="before" name="hpUsesDice"
+      style="position: absolute; right: 0px;">
+      {{hpUsesDice ? 'Dice' : 'Raw HP'}}
+    </mat-slide-toggle>
+    <mat-label>Hit Points</mat-label>
+    <input matInput>
+  </mat-form-field>
+</div>
+<div *ngIf="hpUsesDice">
+  <mat-form-field style="width: 100%">
+    <mat-label>Hit Points</mat-label>
+    <mat-select class="hpdd">
+      <mat-option *ngFor="let size of sizes" value="size">
+        {{size | titlecase}}
+      </mat-option>
+    </mat-select>
+    <mat-slide-toggle [(ngModel)]="hpUsesDice" labelPosition="before" name="hpUsesDice"
+      style="position: absolute; right: 0px;">
+      {{hpUsesDice ? 'Dice' : 'Raw HP'}}
+    </mat-slide-toggle>
+  </mat-form-field>
+</div>

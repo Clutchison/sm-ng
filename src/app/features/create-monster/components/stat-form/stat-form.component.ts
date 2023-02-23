@@ -7,7 +7,7 @@ import {
   MatTableModule,
   MatSelectModule,
   MatGridListModule,
-  MatSlideToggleModule,
+  MatSlideToggleModule
 } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
@@ -15,6 +15,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SpeedInputComponent } from './components/speed-input/speed-input.component';
 import { StatComponent } from './components/stat/stat/stat.component';
+import { HpInputComponent } from './components/hp-input/hp-input/hp-input.component';
 
 @Component({
   selector: 'sm-stat-form',
@@ -36,6 +37,7 @@ import { StatComponent } from './components/stat/stat/stat.component';
     HttpClientModule,
     SpeedInputComponent,
     StatComponent,
+    HpInputComponent,
   ],
   providers: [
     ReferenceService
@@ -46,7 +48,6 @@ export class StatFormComponent implements OnInit {
   crs: string[] = [];
   sizes: string[] = [];
   alignments: string[] = [];
-  hpUsesDice: boolean = true;
 
   constructor(private refService: ReferenceService) { }
 

@@ -23,13 +23,12 @@ type callback = (n: number) => string;
 })
 export class FollowedByComponent implements OnInit {
 
-
   @Input() label: string = ''
 
   @Input() followedBy: string = ''
 
   @Input() followedCalc: callback | undefined;
-  
+
   @Input() centerText: boolean = false;
 
   @ViewChild('inp') input: ElementRef<HTMLInputElement> | undefined = undefined;
@@ -39,8 +38,15 @@ export class FollowedByComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public prefixOffset = (text: string): number => {
+    if (!this.centerText || text === '') return 0;
+    return getTextWidth(text + ' ' + this.calcFollowedBy()) / 2 - (getTextWidth(text) / 2);
+  }
+
   public suffixOffset = (text: string): number => {
-    return getTextWidth(text + ' ') * 1.25;
+    if (!this.centerText) return getTextWidth(text + ' ');
+    return getTextWidth(text + ' ' + this.calcFollowedBy()) / 2 -
+      (getTextWidth(this.calcFollowedBy()) / 2);
   }
 
   public calcFollowedBy = (): string => {
