@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SpeedInputComponent } from './components/speed-input/speed-input.component';
 import { StatComponent } from './components/stat/stat/stat.component';
 import { HpInputComponent } from './components/hp-input/hp-input/hp-input.component';
+import { SpecialCharacterDirective } from 'src/app/shared/directives/special-char/special-char.directive';
 
 @Component({
   selector: 'sm-stat-form',
@@ -38,6 +39,7 @@ import { HpInputComponent } from './components/hp-input/hp-input/hp-input.compon
     SpeedInputComponent,
     StatComponent,
     HpInputComponent,
+    SpecialCharacterDirective,
   ],
   providers: [
     ReferenceService
