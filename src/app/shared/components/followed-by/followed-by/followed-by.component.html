@@ -7,6 +7,6 @@
   matInput 
   value="{{ inp.value ? calcFollowedBy() : ''}}" 
   class="suffix" 
-  [ngStyle]="{'left': suffixOffset(inp.value)*2 + 'px'}" 
+  [ngStyle]="{'left': suffixOffset(inp.value) + 'px'}" 
   />
 </mat-form-field>

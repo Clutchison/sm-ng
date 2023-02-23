@@ -38,7 +38,7 @@ export class FollowedByComponent implements OnInit {
   }
 
   public suffixOffset = (text: string): number => {
-    return getTextWidth(text + ' ');
+    return getTextWidth(text + ' ') * 1.25;
   }
 
   public calcFollowedBy = (): string => {
