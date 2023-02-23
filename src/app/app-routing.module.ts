@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateMonsterComponent } from './features/create-monster/create-monster.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'create-monster', pathMatch: 'full'},
   { path: 'create-monster', component: CreateMonsterComponent },
 ];
 

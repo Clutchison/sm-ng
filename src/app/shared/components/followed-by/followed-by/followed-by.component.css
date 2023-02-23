@@ -6,3 +6,9 @@ p {
   position: absolute;
   right: 0px;
 }
+
+.suffix {
+  position: absolute;
+  pointer-events: none;
+  color: gray;
+}

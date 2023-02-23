@@ -13,7 +13,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SpeedInputComponent } from './components/speed-input.component';
+import { SpeedInputComponent } from './components/speed-input/speed-input.component';
+import { StatComponent } from './components/stat/stat/stat.component';
 
 @Component({
   selector: 'sm-stat-form',
@@ -34,6 +35,7 @@ import { SpeedInputComponent } from './components/speed-input.component';
     ReactiveFormsModule,
     HttpClientModule,
     SpeedInputComponent,
+    StatComponent,
   ],
   providers: [
     ReferenceService

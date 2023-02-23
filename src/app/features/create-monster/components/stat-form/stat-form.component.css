@@ -3,7 +3,3 @@ monster-card {
     width: 100%;
     table-layout: fixed;    /* For cells of equal size */
 }
-.stat {
-    display: table-cell;
-    text-align: center;
-}

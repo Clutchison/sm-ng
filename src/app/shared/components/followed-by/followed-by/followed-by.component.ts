@@ -1,7 +1,11 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatInputModule } from '@angular/material';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material';
+import { getTextWidth } from 'get-text-width';
+
+
+type callback = (n: number) => string;
 
 @Component({
   selector: 'sm-followed-by',
@@ -17,23 +21,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class FollowedByComponent implements OnInit {
 
-  @Input()
-  label: string = ''
 
-  @Input()
-  followedBy: string = ''
+  @Input() label: string = ''
+
+  @Input() followedBy: string = ''
+
+  @Input() followedCalc: callback | undefined;
+  
+  @Input() centerText: boolean = false;
 
   @ViewChild('inp') input: ElementRef<HTMLInputElement> | undefined = undefined;
-  @ViewChild('calcSpan') calcSpan: ElementRef<HTMLInputElement> | undefined = undefined;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public textWidth = (text: string) => {
-    this.calcSpan?.nativeElement.setAttribute('text', text);
-    const w = this.calcSpan?.nativeElement.offsetWidth;
-    console.log(w)
+  public suffixOffset = (text: string): number => {
+    return getTextWidth(text + ' ');
+  }
+
+  public calcFollowedBy = (): string => {
+    return (this.followedCalc) ?
+      this.followedCalc(Number.parseInt(this.input?.nativeElement?.value || '0')) :
+      this.followedBy;
   }
 }
