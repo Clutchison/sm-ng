@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { CreateMonsterComponent } from './features/create-monster/create-monster.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

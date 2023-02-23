@@ -2,7 +2,7 @@
   [ngStyle]="{'text-align': centerText ? 'center' : 'left'}"
   style="position: relative">
   <mat-label>{{label}}</mat-label>
-  <input #inp matInput />
+  <input #inp matInput smSpecialChar [whitelist]="'numeric'" />
   <input #suffix 
   matInput 
   value="{{ inp.value ? calcFollowedBy() : ''}}" 

@@ -3,6 +3,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import { getTextWidth } from 'get-text-width';
+import { SpecialCharacterDirective } from 'src/app/shared/directives/special-char/special-char.directive';
 
 
 type callback = (n: number) => string;
@@ -15,6 +16,7 @@ type callback = (n: number) => string;
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
+    SpecialCharacterDirective,
   ],
   templateUrl: './followed-by.component.html',
   styleUrls: ['./followed-by.component.css']
