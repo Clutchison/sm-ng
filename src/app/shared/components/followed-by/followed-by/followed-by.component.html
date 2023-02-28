@@ -3,8 +3,10 @@
   style="position: relative">
   <mat-label>{{label}}</mat-label>
   <input #inp 
+    [(ngModel)]="value"
     matInput 
     smSpecialChar 
+    (keyup)="update()"
     [whitelist]="'numeric'"
     style="position: relative"
     [ngStyle]="{'right': prefixOffset(inp.value) + 'px' }"

@@ -22,11 +22,11 @@ export type Die = ObjectValues<typeof DICE>;
 
 export type Size = ObjectValues<typeof SIZE>;
 
-export const SizeDiceMapping: { [key in Size]: Die } = {
+export const sizeDiceMapping: { [key in Size]: Die } = {
   'tiny': 4,
   'small': 6,
   'medium': 8,
   'large': 10,
   'huge': 12,
   'gargantuan': 20
-};
+} as const;

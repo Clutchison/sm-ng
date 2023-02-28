@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material';
 import { getTextWidth } from 'get-text-width';
@@ -31,11 +31,19 @@ export class FollowedByComponent implements OnInit {
 
   @Input() centerText: boolean = false;
 
+  @Output() valueChange: EventEmitter<number> = new EventEmitter<number>();
+
+  value: number = 0;
+
   @ViewChild('inp') input: ElementRef<HTMLInputElement> | undefined = undefined;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  update(): void {
+    this.valueChange.emit(this.value);
   }
 
   public prefixOffset = (text: string): number => {
@@ -50,8 +58,10 @@ export class FollowedByComponent implements OnInit {
   }
 
   public calcFollowedBy = (): string => {
-    return (this.followedCalc) ?
-      this.followedCalc(Number.parseInt(this.input?.nativeElement?.value || '0')) :
-      this.followedBy;
+    if (this.followedCalc !== undefined) {
+      return this.followedCalc(Number.parseInt(this.input?.nativeElement?.value || '0'))
+    } else {
+      return this.followedBy;
+    }
   }
 }
